@@ -1,0 +1,31 @@
+{
+  "name": "sum-types",
+  "version": "0.9.0",
+  "description": "Introduction and eliminiation of sum types (or tagged unions)",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "babel index.es6.js --out-file index.js",
+    "test": "eslint index.es6.js test && mocha test"
+  },
+  "keywords": [
+    "data",
+    "functional",
+    "pattern matching"
+  ],
+  "author": "Thomas Scholtes",
+  "license": "ISC",
+  "dependencies": {
+    "object-assign": "^4.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-register": "^6.9.0",
+    "eslint": "^3.1.0",
+    "eslint-config-standard": "^5.3.5",
+    "eslint-plugin-promise": "^2.0.0",
+    "eslint-plugin-standard": "^2.0.0",
+    "mocha": "^2.5.3"
+  }
+}

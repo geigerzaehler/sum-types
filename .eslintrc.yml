@@ -1,0 +1,10 @@
+extends: standard
+rules:
+  no-multiple-empty-lines: [2, {"max": 3, "maxEOF": 1}]
+  no-trailing-spaces: 2
+  semi: ['error', 'never']
+  comma-dangle: ['error', 'always-multiline']
+  generator-star-spacing: ['error', {before: false, after: true}]
+  yield-star-spacing: ['error', {before: false, after: true}]
+env:
+  mocha: true
