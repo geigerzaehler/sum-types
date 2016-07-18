@@ -1,6 +1,8 @@
 Sum Types in Javascript
 =======================
 
+[![Build Status](https://travis-ci.org/geigerzaehler/sum-types.svg?branch=master)](https://travis-ci.org/geigerzaehler/sum-types)
+
 This is a library to define sum type constructors and open values by matching
 against different constructors. The package will help you to write more
 readable, robust, and expressive Javascript code.
@@ -11,9 +13,7 @@ make your code more readable, expressive, and robust. This is especially the
 case if multiple functions with switch statements operate on the same type of
 values.
 
-[API](#api) | [Motivation](motivation)
-
-[lambdash-sum-types]: https://github.com/mwardle/lambdash#sum-types
+[API](#api) | [Motivation](#motivation)
 
 API
 ---
