@@ -277,7 +277,7 @@ implementation.
 const Result = makeSum({
   Success (value) {
     let atoms = getAtomNumber(value)
-    return {atome, value}
+    return {atoms, value}
   },
   Failure: ['message']
 })
