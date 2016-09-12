@@ -1,7 +1,10 @@
 import assign from 'object-assign'
 
 export function caseof (val, handlers) {
-  for (let [constructors, handle] of handlers) {
+  // TODO use for ... of when Symbol.iterator is supported
+  for (let i in handlers) {
+    let constructors = handlers[i][0]
+    let handle = handlers[i][1]
     // Default case
     if (constructors === null) {
       return handle(val)
@@ -11,7 +14,8 @@ export function caseof (val, handlers) {
       constructors = [constructors]
     }
 
-    for (let ctor of constructors) {
+    for (let i in constructors) {
+      let ctor = constructors[i]
       if (val instanceof ctor) {
         return handle(val)
       }
@@ -19,7 +23,7 @@ export function caseof (val, handlers) {
   }
 
   // No handler is matched. This is a type error
-  let ctors = handlers.map(([ctor]) => ctor.name).join(', ')
+  let ctors = handlers.map((handle) => handle[0].name).join(', ')
   throw new TypeError(`Unmatched instance. Must be one of ${ctors}`)
 }
 
