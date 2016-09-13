@@ -70,7 +70,10 @@ function namedConstructor (name, Base, props) {
 
   Ctor.prototype = Object.create(Base.prototype)
   Ctor.prototype.constructor = Ctor
-  Object.defineProperty(Ctor, 'name', { value: name })
+  try {
+    // Safari throws altough the name property of a function is configurable
+    Object.defineProperty(Ctor, 'name', { value: name })
+  } catch (error) {}
 
   return Ctor
 }
