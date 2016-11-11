@@ -1,12 +1,17 @@
 {
   "name": "sum-types",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "Introduction and eliminiation of sum types (or tagged unions)",
   "main": "index.js",
   "scripts": {
-    "prepublish": "babel index.es6.js --out-file index.js",
-    "test": "eslint index.es6.js test && mocha test"
+    "prepublish": "babel --out-dir . src",
+    "test": "eslint src test && mocha test"
   },
+  "files": [
+    "src",
+    "index.js",
+    "caseof-eq.js"
+  ],
   "keywords": [
     "data",
     "functional",

@@ -1,4 +1,4 @@
-import {makeSum, caseof} from '../index.es6.js'
+import {makeSum, caseof} from '../src/index.js'
 import assert from 'assert'
 
 describe('#makeSum() value', function () {

@@ -22,12 +22,14 @@ Install from NPM
 ~~~
 npm install --save sum-types
 ~~~
-and import the module
+
+### `import 'sum-types'`
+
 ~~~js
 import {makeSum, caseof} from 'sum-types'
 ~~~
 
-### `makeSum()`
+#### `makeSum()`
 
 Creates an map of constructor functions from constructor definitions
 
@@ -73,7 +75,7 @@ b.bar === 1
 ~~~
 
 
-### `caseof()`
+#### `caseof()`
 
 The `caseof()` function accepts to arguments. The first is the value to be
 matched and the second is a list of constructor-function pairs. The function
@@ -111,6 +113,32 @@ caseof(value, [
   [null, handleOtherValues]
 ])
 ~~~
+
+
+
+### `import 'sum-types/caseof-eq'`
+
+_Added in v0.9.3_
+
+~~~js
+import {caseof, otherwise} from 'sum-types/caseof-eq'
+~~~
+
+The `caseof()` function matches against patterns using strict equality (`===`).
+
+~~~js
+const result = caseof(value, [
+  ['A', () => 'a'],
+  ['B', 'C', () => 'bc'],
+  [otherwise, () => 'otherwise'],
+])
+~~~
+
+If the value is `A` the result will be `a`. If the value is either `B` or `C`
+the result will be `bc`. In all other cases the result will be `otherwise`.
+
+Note that the syntax is slightly different from the main `caseof()`: Multiple
+patterns are not wrapped in an array.
 
 
 Motivation
