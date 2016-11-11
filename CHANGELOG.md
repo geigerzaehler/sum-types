@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.9.3 - 2016-11-11
+### Added
+- `sum-types/caseof-eq` for matching for equality.
+
 ## 0.9.2 - 2016-09-12
 ### Fixed
 - Fixed thrown exception in Safari.
