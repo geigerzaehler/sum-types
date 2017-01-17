@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Upcoming
+## 0.9.4 - 2017-01-17
 * Export `caseofEq` and `otherwise` from module entry point
 
 ## 0.9.3 - 2016-11-11
