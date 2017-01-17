@@ -1,7 +1,7 @@
-import {otherwise, caseof} from '../src/caseof-eq.js'
+import {otherwise, caseofEq} from '../src'
 import assert from 'assert'
 
-describe('#caseof() with equality match', function () {
+describe('#caseofEq()', function () {
   it('matches correct case', function () {
     const cases = [
       ['A', () => 'A'],
@@ -10,16 +10,16 @@ describe('#caseof() with equality match', function () {
       [otherwise, () => null],
     ]
 
-    assert.equal(caseof('A', cases), 'A')
-    assert.equal(caseof('B', cases), 'B')
-    assert.equal(caseof('C', cases), 'CD')
-    assert.equal(caseof('D', cases), 'CD')
-    assert.equal(caseof('X', cases), null)
+    assert.equal(caseofEq('A', cases), 'A')
+    assert.equal(caseofEq('B', cases), 'B')
+    assert.equal(caseofEq('C', cases), 'CD')
+    assert.equal(caseofEq('D', cases), 'CD')
+    assert.equal(caseofEq('X', cases), null)
   })
 
   it('throws for unmatched target', function () {
     assert.throws(() => {
-      caseof('A', [['B', () => null]])
+      caseofEq('A', [['B', () => null]])
     }, /Unmatched case for/)
   })
 })

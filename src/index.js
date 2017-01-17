@@ -1,5 +1,10 @@
 import assign from 'object-assign'
 
+export {
+  caseof as caseofEq,
+  otherwise,
+} from './caseof-eq'
+
 export function caseof (val, handlers) {
   // TODO use for ... of when Symbol.iterator is supported
   for (let i in handlers) {

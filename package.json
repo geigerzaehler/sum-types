@@ -1,6 +1,6 @@
 {
   "name": "sum-types",
-  "version": "0.9.3",
+  "version": "0.9.4-dev",
   "description": "Introduction and eliminiation of sum types (or tagged unions)",
   "main": "index.js",
   "scripts": {

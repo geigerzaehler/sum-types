@@ -115,19 +115,18 @@ caseof(value, [
 ~~~
 
 
+### `caseofEq()`
 
-### `import 'sum-types/caseof-eq'`
-
-_Added in v0.9.3_
+_Added in v0.9.4_
 
 ~~~js
-import {caseof, otherwise} from 'sum-types/caseof-eq'
+import {caseofEq, otherwise} from 'sum-types'
 ~~~
 
-The `caseof()` function matches against patterns using strict equality (`===`).
+The `caseofEq()` function matches against patterns using strict equality (`===`).
 
 ~~~js
-const result = caseof(value, [
+const result = caseofEq(value, [
   ['A', () => 'a'],
   ['B', 'C', () => 'bc'],
   [otherwise, () => 'otherwise'],
@@ -137,8 +136,8 @@ const result = caseof(value, [
 If the value is `A` the result will be `a`. If the value is either `B` or `C`
 the result will be `bc`. In all other cases the result will be `otherwise`.
 
-Note that the syntax is slightly different from the main `caseof()`: Multiple
-patterns are not wrapped in an array.
+Note that the syntax is slightly different from `caseof()`: Multiple patterns
+are not wrapped in an array.
 
 
 Motivation
